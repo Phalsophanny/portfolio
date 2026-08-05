@@ -1,89 +1,450 @@
+@import "tailwindcss";
+@import "remixicon/fonts/remixicon.css";
+
+/* ============================================================
+   Theme (Tailwind v4)
+============================================================ */
+
+@theme {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-secondary: #9333ea;
+
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+}
+
+/* ============================================================
+   Light Theme (Default)
+============================================================ */
+
 :root {
-  /* Colors */
+  /* Background */
 
-  --background: #020817;
+  --background: #f8fafc;
+  --background-light: #ffffff;
 
-  --surface: #111827;
+  /* Surface */
 
-  --surface-hover: #172036;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+
+  /* Brand */
 
   --primary: #2563eb;
+  --primary-hover: #1d4ed8;
 
-  --primary-hover: #3b82f6;
+  --accent: #0891b2;
 
-  --accent: #06b6d4;
+  /* Status */
 
-  --success: #22c55e;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
 
-  --warning: #f59e0b;
+  /* Text */
 
-  --text: #f8fafc;
+  --text-color: #0f172a;
+  --text-secondary: #475569;
 
-  --text-secondary: #94a3b8;
+  /* Border */
 
-  /* Border Color and Radius */
+  --border: #e2e8f0;
+  --border-color: rgba(15, 23, 42, 0.08);
 
-  --border: #1f2937;
+  /* Radius */
 
   --radius-xs: 6px;
-
   --radius-sm: 8px;
-
   --radius-md: 12px;
-
   --radius-lg: 16px;
-
   --radius-xl: 20px;
-
   --radius-2xl: 24px;
-
   --radius-full: 9999px;
 
   /* Spacing */
 
   --space-1: 4px;
-
   --space-2: 8px;
-
   --space-3: 12px;
-
   --space-4: 16px;
-
   --space-5: 24px;
-
   --space-6: 32px;
-
   --space-7: 48px;
-
   --space-8: 64px;
-
   --space-9: 80px;
-
   --space-10: 96px;
 
-  /* Text-Size */
+  /* Typography */
 
   --text-xs: 12px;
-
   --text-sm: 14px;
-
   --text-base: 16px;
-
   --text-lg: 18px;
-
   --text-xl: 20px;
-
   --text-2xl: 24px;
-
   --text-3xl: 30px;
-
   --text-4xl: 36px;
-
   --text-5xl: 48px;
-
   --text-6xl: 56px;
 
-  /* Font */
+  font-family: "Inter", sans-serif;
+}
+
+/* ============================================================
+   Dark Theme
+============================================================ */
+
+.dark {
+  --background: #020817;
+  --background-light: #0f172a;
+
+  --surface: #111827;
+  --surface-hover: #1e293b;
+
+  --primary: #2563eb;
+  --primary-hover: #3b82f6;
+
+  --accent: #06b6d4;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --text-color: #f8fafc;
+  --text-secondary: #94a3b8;
+
+  --border: #1f2937;
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================================
+   Base
+============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--background);
+  color: var(--text-color);
 
   font-family: "Inter", sans-serif;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* ============================================================
+   Background
+============================================================ */
+
+.bg-background {
+  background: var(--background);
+}
+
+.bg-background-light {
+  background: var(--background-light);
+}
+
+.bg-surface {
+  background: var(--surface);
+}
+
+.bg-surface-hover {
+  background: var(--surface-hover);
+}
+
+.bg-primary {
+  background: var(--primary);
+}
+
+.bg-primary-hover {
+  background: var(--primary-hover);
+}
+
+.bg-accent {
+  background: var(--accent);
+}
+
+.bg-success {
+  background: var(--success);
+}
+
+.bg-warning {
+  background: var(--warning);
+}
+
+.bg-danger {
+  background: var(--danger);
+}
+
+/* ============================================================
+   Text
+============================================================ */
+
+.text-main {
+  color: var(--text-color);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+/* ============================================================
+   Border
+============================================================ */
+
+.border-default {
+  border: 1px solid var(--border);
+}
+
+.border-color {
+  border-color: var(--border-color);
+}
+
+/* ============================================================
+   Radius
+============================================================ */
+
+.rounded-xs {
+  border-radius: var(--radius-xs);
+}
+
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--radius-xl);
+}
+
+.rounded-2xl {
+  border-radius: var(--radius-2xl);
+}
+
+.rounded-full {
+  border-radius: var(--radius-full);
+}
+
+/* ============================================================
+   Font Size
+============================================================ */
+
+.text-xs {
+  font-size: var(--text-xs);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+}
+
+.text-base {
+  font-size: var(--text-base);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+}
+
+.text-2xl {
+  font-size: var(--text-2xl);
+}
+
+.text-3xl {
+  font-size: var(--text-3xl);
+}
+
+.text-4xl {
+  font-size: var(--text-4xl);
+}
+
+.text-5xl {
+  font-size: var(--text-5xl);
+}
+
+.text-6xl {
+  font-size: var(--text-6xl);
+}
+
+/* ============================================================
+   Spacing
+============================================================ */
+
+.p-1 {
+  padding: var(--space-1);
+}
+
+.p-2 {
+  padding: var(--space-2);
+}
+
+.p-3 {
+  padding: var(--space-3);
+}
+
+.p-4 {
+  padding: var(--space-4);
+}
+
+.p-5 {
+  padding: var(--space-5);
+}
+
+.p-6 {
+  padding: var(--space-6);
+}
+
+.m-1 {
+  margin: var(--space-1);
+}
+
+.m-2 {
+  margin: var(--space-2);
+}
+
+.m-3 {
+  margin: var(--space-3);
+}
+
+.m-4 {
+  margin: var(--space-4);
+}
+
+.m-5 {
+  margin: var(--space-5);
+}
+
+.m-6 {
+  margin: var(--space-6);
+}
+
+/* ============================================================
+   Container
+============================================================ */
+
+.container-custom {
+  width: min(1280px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+/* ============================================================
+   Card
+============================================================ */
+
+.card {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-xl);
+
+  padding: var(--space-5);
+
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  background: var(--surface-hover);
+}
+
+/* ============================================================
+   Button
+============================================================ */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+
+  color: white;
+
+  border: none;
+
+  border-radius: var(--radius-md);
+
+  padding: var(--space-3) var(--space-5);
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  color: var(--primary);
+
+  border: 1px solid var(--primary);
+
+  border-radius: var(--radius-md);
+
+  padding: var(--space-3) var(--space-5);
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+
+  color: white;
+}
+
+/* ============================================================
+   Transition
+============================================================ */
+
+.transition-default {
+  transition: all 0.25s ease;
 }
