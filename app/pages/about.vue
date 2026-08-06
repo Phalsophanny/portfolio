@@ -1,5 +1,5 @@
 <template>
-  <div>
-    <h1>About</h1>
-  </div>
+  <section class="section">
+    <div class="app-container">About</div>
+  </section>
 </template>

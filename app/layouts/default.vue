@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <Navbar />
+  <Navbar />
 
-    <main>
-      <slot />
-    </main>
+  <main>
+    <slot />
+  </main>
 
-    <!-- <Footer /> -->
-  </div>
+  <!-- <Footer /> -->
 </template>

@@ -3,10 +3,3 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
-<script setup>
-useHead({
-  htmlAttrs: {
-    class: "light",
-  },
-});
-</script>

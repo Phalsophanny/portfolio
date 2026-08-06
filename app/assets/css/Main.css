@@ -19,6 +19,29 @@
    Light Theme (Default)
 ============================================================ */
 
+.light {
+  --background: #f8fafc;
+  --background-light: #ffffff;
+
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  --accent: #06b6d4;
+
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+
+  --text-color: #0f172a;
+  --text-secondary: #64748b;
+
+  --border: #e2e8f0;
+  --border-color: rgba(15, 23, 42, 0.08);
+}
+
 :root {
   /* Background */
 
@@ -447,4 +470,24 @@ body {
 
 .transition-default {
   transition: all 0.25s ease;
+}
+
+/* Responsive */
+
+@utility app-container {
+  @apply max-w-7xl mx-auto px-5 sm:px-6 lg:px-8;
+}
+.section {
+  @apply py-16 md:py-24 lg:py-10;
+}
+.section-title {
+  @apply text-3xl
+    md:text-4xl
+    lg:text-5xl
+    font-bold;
+}
+.section-subtitle {
+  @apply mt-4
+    text-base
+    md:text-lg;
 }
