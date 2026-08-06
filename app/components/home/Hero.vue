@@ -1,6 +1,6 @@
 <template>
   <section class="app-container">
-    <div class="container">
+    <div class="container items-center">
       <!-- left -->
       <div>
         <div class="flex flex-col gap-4">
