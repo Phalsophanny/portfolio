@@ -2,11 +2,12 @@
   <section class="app-container">
     <div class="container items-center">
       <!-- left -->
-      <div>
+      <div class="max-w-md">
         <div class="flex flex-col gap-4">
           <div
             class="flex gap-2 items-center w-fit px-2 py-1 rounded-xl bg-primary/[0.23] text-xs text-primary font-semibold">
-            <div class="w-2 h-2 rounded-full bg-success"></div>
+            <span
+              class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
             <div>Backend Developer</div>
           </div>
 
@@ -15,7 +16,7 @@
             <span class="text-primary">Sophanny Phal</span>
           </div>
           <div class="text-lg">Backend Developer | Java | Spring Boot</div>
-          <div class="text-xs text-secondary">
+          <div class="text-xs text-secondary leading-[20px]">
             I build secure, scalable, and high-performance backend applications
             and RESTful APIs.
           </div>
@@ -99,7 +100,7 @@
               </div>
             </div>
           </div>
-          <div class="flex gap-10 justify-between">
+          <div class="flex justify-between">
             <div class="flex flex-col items-center justify-center">
               <div class="text-lg font-semibold text-primary">2+</div>
               <div class="text-xs text-secondary whitespace-nowrap">

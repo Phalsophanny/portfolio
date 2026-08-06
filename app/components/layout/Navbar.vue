@@ -1,9 +1,12 @@
 <template>
   <header class="navbar">
-    <div class="flex gap-2 text-xs items-center font-semibold">
+    <!-- <div class="flex gap-2 text-xs items-center font-semibold">
       <i class="ri-code-s-slash-line text-primary text-base"></i>
       <div>SOPHANNY P.</div>
-    </div>
+    </div> -->
+    <SectionTitle
+      icon="ri-code-s-slash-line"
+      label="SOPHANNY P."></SectionTitle>
 
     <nav
       class="menu_container hidden flex gap-10 font-semibold text-xs items-center">
@@ -148,19 +151,25 @@ onMounted(() => {
 });
 </script>
 <style scoped>
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 20px; /* py-5 px-16 */
+
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border-color);
+}
 /* Mobile */
 @media (max-width: 389px) {
   .menu_container {
     display: none;
   }
   .navbar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 1.25rem 2rem; /* py-5 px-16 */
-
     background-color: var(--surface);
     border-bottom: 1px solid var(--border-color);
   }
@@ -171,34 +180,12 @@ onMounted(() => {
   .menu_container {
     display: none;
   }
-  .navbar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 1.25rem 2rem; /* py-5 px-16 */
-
-    background-color: var(--surface);
-    border-bottom: 1px solid var(--border-color);
-  }
 }
 
 /* Tablet */
 @media (min-width: 430px) and (max-width: 767px) {
   .menu_container {
     display: none;
-  }
-  .navbar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 1.25rem 2rem; /* py-5 px-16 */
-
-    background-color: var(--surface);
-    border-bottom: 1px solid var(--border-color);
   }
 }
 
@@ -207,17 +194,6 @@ onMounted(() => {
   .menu_container {
     display: none;
   }
-  .navbar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 1.25rem 2rem; /* py-5 px-16 */
-
-    background-color: var(--surface);
-    border-bottom: 1px solid var(--border-color);
-  }
 }
 
 /* Laptop */
@@ -225,34 +201,12 @@ onMounted(() => {
   .menu_container {
     display: flex;
   }
-  .navbar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 1.25rem 4rem; /* py-5 px-16 */
-
-    background-color: var(--surface);
-    border-bottom: 1px solid var(--border-color);
-  }
 }
 
 /* Desktop */
 @media (min-width: 1440px) {
   .menu_container {
     display: flex;
-  }
-  .navbar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 1.25rem 4rem; /* py-5 px-16 */
-
-    background-color: var(--surface);
-    border-bottom: 1px solid var(--border-color);
   }
 }
 </style>
