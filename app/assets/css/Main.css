@@ -29,7 +29,7 @@
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
 
-  --accent: #06b6d4;
+  --accent: #28a8ff;
 
   --success: #16a34a;
   --warning: #d97706;
@@ -76,6 +76,8 @@
   --border: #e2e8f0;
   --border-color: rgba(15, 23, 42, 0.08);
 
+  /* --btn-bg-color: #010711; */
+  --btn-bg-color: #64748b;
   /* Radius */
 
   --radius-xs: 6px;
@@ -163,6 +165,13 @@ body {
   transition:
     background-color 0.25s ease,
     color 0.25s ease;
+}
+
+/* ============================================================
+   Button
+============================================================ */
+.btn-bg-color {
+  background: var(--btn-bg-color);
 }
 
 /* ============================================================
@@ -475,7 +484,7 @@ body {
 /* Responsive */
 
 @utility app-container {
-  @apply max-w-7xl mx-auto px-5 sm:px-6 lg:px-8;
+  @apply max-w-7xl mx-auto py-10 px-5 sm:px-6 lg:px-8;
 }
 .section {
   @apply py-16 md:py-24 lg:py-10;

@@ -1,6 +1,5 @@
 <template>
-  <header
-    class="relative flex items-center justify-between justify-between items-center px-16 py-5 bg-surface border-b border-color">
+  <header class="navbar">
     <div class="flex gap-2 text-xs items-center font-semibold">
       <i class="ri-code-s-slash-line text-primary text-base"></i>
       <div>SOPHANNY P.</div>
@@ -9,135 +8,91 @@
     <nav
       class="menu_container hidden flex gap-10 font-semibold text-xs items-center">
       <NuxtLink
-        to="/"
+        v-for="item in menus"
+        :to="item.to"
         activeClass="text-primary font-bold"
         class="transition-colors duration-300 hover:text-primary"
-        >Home</NuxtLink
+        >{{ item.name }}</NuxtLink
       >
-      <NuxtLink
-        to="/about"
-        activeClass="text-primary font-bold"
-        class="transition-colors duration-300 hover:text-primary"
-        >About</NuxtLink
-      >
-      <NuxtLink
-        to="/skill"
-        activeClass="text-primary font-bold"
-        class="transition-colors duration-300 hover:text-primary"
-        >Skills</NuxtLink
-      >
-      <NuxtLink
-        to="/project"
-        activeClass="text-primary font-bold"
-        class="transition-colors duration-300 hover:text-primary"
-        >Projects</NuxtLink
-      >
-      <NuxtLink
-        to="/experience"
-        activeClass="text-primary font-bold"
-        class="transition-colors duration-300 hover:text-primary"
-        >Experience</NuxtLink
-      >
-      <NuxtLink
-        to="/education"
-        activeClass="text-primary font-bold"
-        class="transition-colors duration-300 hover:text-primary"
-        >Education</NuxtLink
-      >
-      <NuxtLink
-        to="/contact"
-        activeClass="text-primary font-bold"
-        class="transition-colors duration-300 hover:text-primary"
-        >Contact</NuxtLink
-      >
-      <div
-        class="flex items-center justify-center w-10 h-10 rounded-md cursor-pointer hover:text-primary transition"
-        @click="toggleTheme">
-        <i
-          :class="colorMode.value === 'dark' ? 'ri-sun-fill' : 'ri-moon-fill'"
-          class="text-lg"></i>
-      </div>
+
+      <ClientOnly>
+        <div
+          class="flex items-center justify-center w-10 h-10 rounded-md cursor-pointer hover:text-primary transition"
+          @click="toggleTheme">
+          <i
+            :class="colorMode.value === 'dark' ? 'ri-sun-fill' : 'ri-moon-fill'"
+            class="text-lg"></i>
+        </div>
+      </ClientOnly>
     </nav>
-    <!-- <button class="lg:hidden">
-      <i class="ri-menu-line text-2xl"></i>
-    </button> -->
 
     <!-- dropdown menu -->
 
-    <Menu as="div" class="relative inline-block lg:hidden">
+    <Menu as="div" class="relative lg:hidden z-50">
       <MenuButton
-        :class="
-          colorMode.value === 'dark'
-            ? 'text-white bg-white/10 hover:bg-white/20'
-            : 'text-slate-700 bg-slate-100 hover:bg-slate-200'
-        "
-        class="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold inset-ring-1 inset-ring-white/5">
-        <i class="ri-menu-line text-2xl"></i>
+        class="flex items-center justify-center p-2 rounded-lg hover:bg-surface-hover transition">
+        <i class="ri-menu-line text-2xl text-primary"></i>
       </MenuButton>
 
-      <transition
-        enter-active-class="transition ease-out duration-100"
-        enter-from-class="transform opacity-0 scale-95"
-        enter-to-class="transform scale-100"
-        leave-active-class="transition ease-in duration-75"
-        leave-from-class="transform scale-100"
-        leave-to-class="transform opacity-0 scale-95">
+      <Transition
+        enter-active-class="transition duration-200 ease-out"
+        enter-from-class="opacity-0 scale-95"
+        enter-to-class="opacity-100 scale-100"
+        leave-active-class="transition duration-150 ease-in"
+        leave-from-class="opacity-100 scale-100"
+        leave-to-class="opacity-0 scale-95">
         <MenuItems
-          class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10">
-          <div class="py-1">
-            <MenuItem v-slot="{ active }">
-              <a
-                href="#"
+          class="absolute right-0 mt-3 w-60 origin-top-right rounded-xl border border-color bg-surface shadow-xl focus:outline-none">
+          <div class="py-2">
+            <MenuItem
+              v-for="item in menus"
+              :key="item.to"
+              v-slot="{ active, close }"
+              as="div">
+              <NuxtLink
+                :to="item.to"
+                activeClass="bg-primary/10 text-primary"
+                @click="
+                  () => {
+                    close();
+                  }
+                "
+                class="block"
                 :class="[
+                  'flex items-center gap-3 px-4 py-3 transition-colors',
                   active
-                    ? 'bg-white/5 text-white outline-hidden'
-                    : 'text-gray-300',
-                  'block px-4 py-2 text-sm',
-                ]"
-                >Account settings</a
-              >
+                    ? 'bg-primary/10 text-primary'
+                    : 'hover:bg-surface-hover',
+                ]">
+                <i :class="item.icon"></i>
+                <span>{{ item.name }}</span>
+              </NuxtLink>
             </MenuItem>
+
+            <div class="my-2 border-t border-color"></div>
+
             <MenuItem v-slot="{ active }">
-              <a
-                href="#"
+              <button
+                @click="toggleTheme"
                 :class="[
+                  'flex w-full items-center gap-3 px-4 py-3 transition-colors',
                   active
-                    ? 'bg-white/5 text-white outline-hidden'
-                    : 'text-gray-300',
-                  'block px-4 py-2 text-sm',
-                ]"
-                >Support</a
-              >
+                    ? 'bg-primary/10 text-primary'
+                    : 'hover:bg-surface-hover',
+                ]">
+                <i
+                  :class="
+                    colorMode.value === 'dark' ? 'ri-sun-fill' : 'ri-moon-fill'
+                  "></i>
+
+                <span>
+                  {{ colorMode.value === "dark" ? "Light Mode" : "Dark Mode" }}
+                </span>
+              </button>
             </MenuItem>
-            <MenuItem v-slot="{ active }">
-              <a
-                href="#"
-                :class="[
-                  active
-                    ? 'bg-white/5 text-white outline-hidden'
-                    : 'text-gray-300',
-                  'block px-4 py-2 text-sm',
-                ]"
-                >License</a
-              >
-            </MenuItem>
-            <form method="POST" action="#">
-              <MenuItem v-slot="{ active }">
-                <button
-                  type="submit"
-                  :class="[
-                    active
-                      ? 'bg-white/5 text-white outline-hidden'
-                      : 'text-gray-300',
-                    'block w-full px-4 py-2 text-left text-sm',
-                  ]">
-                  Sign out
-                </button>
-              </MenuItem>
-            </form>
           </div>
         </MenuItems>
-      </transition>
+      </Transition>
     </Menu>
   </header>
 </template>
@@ -145,15 +100,51 @@
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/20/solid";
-const colorMode = useColorMode();
 
+const colorMode = useColorMode();
+const menus = [
+  {
+    name: "Home",
+    to: "/",
+    icon: "ri-home-5-line",
+  },
+  {
+    name: "About",
+    to: "/about",
+    icon: "ri-user-line",
+  },
+  {
+    name: "Skills",
+    to: "/skill",
+    icon: "ri-code-s-slash-line",
+  },
+  {
+    name: "Projects",
+    to: "/project",
+    icon: "ri-folder-line",
+  },
+  {
+    name: "Experience",
+    to: "/experience",
+    icon: "ri-briefcase-line",
+  },
+  {
+    name: "Education",
+    to: "/education",
+    icon: "ri-graduation-cap-line",
+  },
+  {
+    name: "Contact",
+    to: "/contact",
+    icon: "ri-mail-line",
+  },
+];
 const toggleTheme = (v) => {
   colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
-  console.log(colorMode.value);
 };
 
 onMounted(() => {
-  console.log(colorMode.preference);
+  colorMode.preference;
 });
 </script>
 <style scoped>
@@ -162,12 +153,34 @@ onMounted(() => {
   .menu_container {
     display: none;
   }
+  .navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.25rem 2rem; /* py-5 px-16 */
+
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border-color);
+  }
 }
 
 /* Large Mobile */
 @media (min-width: 390px) and (max-width: 429px) {
   .menu_container {
     display: none;
+  }
+  .navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.25rem 2rem; /* py-5 px-16 */
+
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border-color);
   }
 }
 
@@ -176,12 +189,34 @@ onMounted(() => {
   .menu_container {
     display: none;
   }
+  .navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.25rem 2rem; /* py-5 px-16 */
+
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border-color);
+  }
 }
 
 /* Tablet Landscape */
 @media (min-width: 768px) and (max-width: 1023px) {
   .menu_container {
     display: none;
+  }
+  .navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.25rem 2rem; /* py-5 px-16 */
+
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border-color);
   }
 }
 
@@ -190,12 +225,34 @@ onMounted(() => {
   .menu_container {
     display: flex;
   }
+  .navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.25rem 4rem; /* py-5 px-16 */
+
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border-color);
+  }
 }
 
 /* Desktop */
 @media (min-width: 1440px) {
   .menu_container {
     display: flex;
+  }
+  .navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.25rem 4rem; /* py-5 px-16 */
+
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border-color);
   }
 }
 </style>
