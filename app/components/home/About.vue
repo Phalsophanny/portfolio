@@ -55,24 +55,57 @@
           <SectionTitle
             icon="ri-info-card-line"
             label="Information"></SectionTitle>
-          <div class="flex">
-            <div class="w-full flex gap-3.5 flex-col">
-              <InfoItem icon="ri-user-line" label="Name:"></InfoItem>
-              <InfoItem icon="ri-mail-line" label="Gmail:"></InfoItem>
-              <InfoItem icon="ri-map-pin-line" label="Location:"></InfoItem>
+          <div class="flex flex-wrap gap-5">
+            <div class="flex flex-col gap-3 w-[278px]">
+              <InfoItem
+                icon="ri-user-line"
+                label="Name"
+                color="text-color"></InfoItem>
+              <div class="text-secondary text-xs">Phal Sophanny</div>
+            </div>
+            <div class="flex flex-col gap-3 w-[278px]">
+              <InfoItem
+                icon="ri-mail-line"
+                label="Gmail"
+                color="text-color"></InfoItem>
+              <div class="text-secondary text-xs">Pannyphal1@gmail.com</div>
+            </div>
+
+            <div class="flex flex-col gap-3 w-[278px]">
+              <InfoItem
+                icon="ri-map-pin-line"
+                label="Location"
+                color="text-color"></InfoItem>
+              <div class="text-secondary text-xs">Phnom Penh, Cambodia</div>
+            </div>
+            <div class="flex flex-col gap-3 w-[278px]">
               <InfoItem
                 icon="ri-graduation-cap-line"
-                label="Education:"></InfoItem>
-              <InfoItem icon="ri-school-line" label="Degree:"></InfoItem>
-            </div>
-            <div class="w-full flex justify-between flex-col">
-              <div class="text-secondary text-xs">Phal Sophanny</div>
-              <div class="text-secondary text-xs">Pannyphal1@gmail.com</div>
-              <div class="text-secondary text-xs">Phnom Penh, Cambodia</div>
+                label="Education"
+                color="text-color"></InfoItem>
               <div class="text-secondary text-xs">SETEC Institute</div>
+            </div>
+
+            <div class="flex flex-col gap-3 w-[278px]">
+              <InfoItem
+                icon="ri-school-line"
+                label="Degree"
+                color="text-color"></InfoItem>
               <div class="text-secondary text-xs">Bachelor’s Degree</div>
             </div>
           </div>
+
+          <!-- <div class="flex">
+            <div class="w-full flex gap-3.5 flex-col">
+              
+              
+              
+            </div>
+            <div class="w-full flex justify-between flex-col">
+              
+              
+            </div>
+          </div> -->
         </div>
       </div>
     </div>

@@ -11,28 +11,28 @@
               icon="ri-book-2-line"
               label="Technical Skill"
               color="text-color"></InfoItem>
-            <Skillbox :skills="tech" />
+            <SkillBox :skills="tech" />
           </div>
           <div class="flex flex-col gap-3">
             <InfoItem
               icon="ri-artboard-2-line"
               label="Frameworks"
               color="text-color"></InfoItem>
-            <Skillbox :skills="framework" />
+            <SkillBox :skills="framework" />
           </div>
           <div class="flex flex-col gap-3">
             <InfoItem
               icon="ri-database-2-line"
               label="Databases"
               color="text-color"></InfoItem>
-            <Skillbox :skills="databases" />
+            <SkillBox :skills="databases" />
           </div>
           <div class="flex flex-col gap-3">
             <InfoItem
               icon="ri-settings-2-line"
               label="Tools & Others"
               color="text-color"></InfoItem>
-            <Skillbox :skills="tool" />
+            <SkillBox :skills="tool" />
           </div>
         </div>
       </div>

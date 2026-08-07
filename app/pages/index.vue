@@ -3,5 +3,6 @@
     <Hero />
     <About />
     <Skills />
+    <Projects />
   </main>
 </template>

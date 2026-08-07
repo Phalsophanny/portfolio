@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap gap-1 w-full max-w-[241px]">
+  <div class="flex flex-wrap gap-1 w-full max-w-[278px]">
     <div
       v-for="skill in skills"
       :key="skill"

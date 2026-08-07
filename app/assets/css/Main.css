@@ -26,7 +26,7 @@
   --surface: #ffffff;
   --surface-hover: #f1f5f9;
 
-  --primary: #2563eb;
+  --primary: #155bd7;
   --primary-hover: #1d4ed8;
 
   --accent: #28a8ff;
@@ -80,6 +80,30 @@
 
   /* --btn-bg-color: #010711; */
   --btn-bg-color: #64748b;
+
+  /* ===== Project Icon Colors ===== */
+  --emerald: #10b981;
+  --violet: #8b5cf6;
+  --amber: #f59e0b;
+  --cyan: #06b6d4;
+  --indigo: #6366f1;
+  --orange: #f97316;
+  --rose: #f43f5e;
+  --teal: #14b8a6;
+  --pink: #ec4899;
+  --sky: #0ea5e9;
+
+  /* ===== Project Icon background Colors ===== */
+  --emerald-bg: rgb(16 185 129 / 0.15);
+  --violet-bg: rgb(139 92 246 / 0.15);
+  --amber-bg: rgb(245 158 11 / 0.15);
+  --cyan-bg: rgb(6 182 212 / 0.15);
+  --indigo-bg: rgb(99 102 241 / 0.15);
+  --orange-bg: rgb(249 115 22 / 0.15);
+  --rose-bg: rgb(244 63 94 / 0.15);
+  --teal-bg: rgb(20 184 166 / 0.15);
+  --pink-bg: rgb(236 72 153 / 0.15);
+  --sky-bg: rgb(14 165 233 / 0.15);
 
   /* --box-style: rgba(255, 255, 255, 0.3); */
   /* Radius */
@@ -223,6 +247,45 @@ body {
 .bg-danger {
   background: var(--danger);
 }
+.bg-emerald {
+  background-color: var(--emerald-bg);
+}
+
+.bg-violet {
+  background-color: var(--violet-bg);
+}
+
+.bg-amber {
+  background-color: var(--amber-bg);
+}
+
+.bg-cyan {
+  background-color: var(--cyan-bg);
+}
+
+.bg-indigo {
+  background-color: var(--indigo-bg);
+}
+
+.bg-orange {
+  background-color: var(--orange-bg);
+}
+
+.bg-rose {
+  background-color: var(--rose-bg);
+}
+
+.bg-teal {
+  background-color: var(--teal-bg);
+}
+
+.bg-pink {
+  background-color: var(--pink-bg);
+}
+
+.bg-sky {
+  background-color: var(--sky-bg);
+}
 
 /* ============================================================
    Text
@@ -255,7 +318,45 @@ body {
 .text-danger {
   color: var(--danger);
 }
+.text-emerald {
+  color: var(--emerald);
+}
 
+.text-violet {
+  color: var(--violet);
+}
+
+.text-amber {
+  color: var(--amber);
+}
+
+.text-cyan {
+  color: var(--cyan);
+}
+
+.text-indigo {
+  color: var(--indigo);
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
+.text-rose {
+  color: var(--rose);
+}
+
+.text-teal {
+  color: var(--teal);
+}
+
+.text-pink {
+  color: var(--pink);
+}
+
+.text-sky {
+  color: var(--sky);
+}
 /* ============================================================
    Border
 ============================================================ */
@@ -479,6 +580,84 @@ body {
   color: white;
 }
 
+/* ==========================================
+   Project Icon Colors
+========================================== */
+
+.icon-emerald {
+  color: var(--emerald);
+  background-color: var(--emerald-bg);
+}
+
+.icon-violet {
+  color: var(--violet);
+  background-color: var(--violet-bg);
+}
+
+.icon-amber {
+  color: var(--amber);
+  background-color: var(--amber-bg);
+}
+
+.icon-cyan {
+  color: var(--cyan);
+  background-color: var(--cyan-bg);
+}
+
+.icon-indigo {
+  color: var(--indigo);
+  background-color: var(--indigo-bg);
+}
+
+.icon-orange {
+  color: var(--orange);
+  background-color: var(--orange-bg);
+}
+
+.icon-rose {
+  color: var(--rose);
+  background-color: var(--rose-bg);
+}
+
+.icon-teal {
+  color: var(--teal);
+  background-color: var(--teal-bg);
+}
+
+.icon-pink {
+  color: var(--pink);
+  background-color: var(--pink-bg);
+}
+
+.icon-sky {
+  color: var(--sky);
+  background-color: var(--sky-bg);
+}
+
+.icon-emerald,
+.icon-violet,
+.icon-amber,
+.icon-cyan,
+.icon-indigo,
+.icon-orange,
+.icon-rose,
+.icon-teal,
+.icon-pink,
+.icon-sky {
+  border: 1px solid rgb(255 255 255 / 0.1);
+}
+.project-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 9999px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  flex-shrink: 0;
+}
 /* ============================================================
    Transition
 ============================================================ */
