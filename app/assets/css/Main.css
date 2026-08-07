@@ -40,6 +40,8 @@
 
   --border: #e2e8f0;
   --border-color: rgba(15, 23, 42, 0.08);
+
+  --box-style: #2564eb50;
 }
 
 :root {
@@ -78,6 +80,8 @@
 
   /* --btn-bg-color: #010711; */
   --btn-bg-color: #64748b;
+
+  /* --box-style: rgba(255, 255, 255, 0.3); */
   /* Radius */
 
   --radius-xs: 6px;
@@ -142,6 +146,8 @@
 
   --border: #1f2937;
   --border-color: rgba(255, 255, 255, 0.08);
+
+  --box-style: rgba(255, 255, 255, 0.3);
 }
 
 /* ============================================================
@@ -499,4 +505,27 @@ body {
   @apply mt-4
     text-base
     md:text-lg;
+}
+/* Box Style class */
+
+.skill-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--box-style),
+    transparent
+  );
+
+  animation: shimmer 2.5s linear infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
