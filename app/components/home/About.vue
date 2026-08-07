@@ -55,7 +55,7 @@
           <SectionTitle
             icon="ri-info-card-line"
             label="Information"></SectionTitle>
-          <div class="flex flex-wrap gap-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="flex flex-col gap-3 w-[278px]">
               <InfoItem
                 icon="ri-user-line"
@@ -94,18 +94,6 @@
               <div class="text-secondary text-xs">Bachelor’s Degree</div>
             </div>
           </div>
-
-          <!-- <div class="flex">
-            <div class="w-full flex gap-3.5 flex-col">
-              
-              
-              
-            </div>
-            <div class="w-full flex justify-between flex-col">
-              
-              
-            </div>
-          </div> -->
         </div>
       </div>
     </div>

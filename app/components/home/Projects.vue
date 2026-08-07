@@ -3,7 +3,7 @@
     <div
       class="rounded-2xl border border-color bg-surface p-4 w-full flex flex-col justify-between gap-5">
       <SectionTitle icon="ri-folder-open-fill" label="Featured Projects" />
-      <div class="flex gap-5 flex-wrap">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <AppCard
           v-for="project in projects"
           :key="project.id"

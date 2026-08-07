@@ -10,7 +10,7 @@
         <div class="flex flex-col gap-1">
           <div class="font-semibold">{{ data.title }}</div>
           <div class="w-[30%] h-[5px] bg-emerald rounded-2xl"></div>
-          <div class="text-secondary text-xs leading-[20px] h-20">
+          <div class="text-secondary text-xs leading-[20px] min-h-20">
             {{ data.detail }}
           </div>
           <SkillBox :skills="data.skills" />
