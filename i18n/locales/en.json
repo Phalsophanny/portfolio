@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": "Front-End Developer",
+    "name": "SOPHANNY PHAL"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "contact": "Contact"
+  }
+}

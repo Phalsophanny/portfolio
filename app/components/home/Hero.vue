@@ -13,7 +13,7 @@
 
           <div class="text-4xl font-semibold">
             <span>Hi, I’m </span>
-            <span class="text-primary">Sophanny Phal</span>
+            <span class="text-primary">{{ t("hero.name") }}</span>
           </div>
           <div class="text-lg">Backend Developer | Java | Spring Boot</div>
           <div class="text-xs text-secondary leading-[20px]">
@@ -157,6 +157,11 @@
 <script setup>
 import profile from "~/assets/images/profile.jpg";
 import resume from "~/assets/files/resume.pdf";
+const { t, locale, messages } = useI18n();
+
+console.log("Locale:", locale.value);
+console.log("Messages:", messages.value);
+console.log("Name:", t("hero.name"));
 const gmail = "Pannyphal1@gmail.com";
 const copied = ref(false);
 

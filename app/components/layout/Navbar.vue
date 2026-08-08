@@ -1,9 +1,5 @@
 <template>
   <header class="navbar">
-    <!-- <div class="flex gap-2 text-xs items-center font-semibold">
-      <i class="ri-code-s-slash-line text-primary text-base"></i>
-      <div>SOPHANNY P.</div>
-    </div> -->
     <SectionTitle
       icon="ri-code-s-slash-line"
       label="SOPHANNY P."></SectionTitle>
@@ -17,6 +13,8 @@
         class="transition-colors duration-300 hover:text-primary"
         >{{ item.name }}</NuxtLink
       >
+
+      <LanguageSwitch />
 
       <ClientOnly>
         <div
@@ -73,6 +71,9 @@
             </MenuItem>
 
             <div class="my-2 border-t border-color"></div>
+            <MenuItem v-slot="{ active }">
+              <LanguageSwitch @click="toggleTheme" />
+            </MenuItem>
 
             <MenuItem v-slot="{ active }">
               <button
