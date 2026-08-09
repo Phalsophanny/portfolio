@@ -120,7 +120,7 @@ const menus = computed(() => [
   },
   {
     name: t("nav.skills"),
-    to: "/skills",
+    to: "/skill",
     icon: "ri-code-line",
   },
   {
