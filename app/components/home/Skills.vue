@@ -4,33 +4,33 @@
       <div class="flex flex-col gap-5 justify-between">
         <SectionTitle
           icon="ri-code-s-slash-line"
-          label="Technical Skill"></SectionTitle>
+          :label="$t('skill.technical_skill')"></SectionTitle>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="flex flex-col gap-3">
             <InfoItem
               icon="ri-book-2-line"
-              label="Technical Skill"
+              :label="$t('skill.language')"
               color="text-color"></InfoItem>
             <SkillBox :skills="tech" />
           </div>
           <div class="flex flex-col gap-3">
             <InfoItem
               icon="ri-artboard-2-line"
-              label="Frameworks"
+              :label="$t('skill.framework')"
               color="text-color"></InfoItem>
             <SkillBox :skills="framework" />
           </div>
           <div class="flex flex-col gap-3">
             <InfoItem
               icon="ri-database-2-line"
-              label="Databases"
+              :label="$t('skill.databases')"
               color="text-color"></InfoItem>
             <SkillBox :skills="databases" />
           </div>
           <div class="flex flex-col gap-3">
             <InfoItem
               icon="ri-settings-2-line"
-              label="Tools & Others"
+              :label="$t('skill.tools_others')"
               color="text-color"></InfoItem>
             <SkillBox :skills="tool" />
           </div>

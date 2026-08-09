@@ -1,9 +1,13 @@
 {
-  "hero": {
-    "title": "Front-End Developer",
-    "name": "SOPHANNY PHAL"
-  },
+  "name": "Name",
+  "gmail": "Gmail",
+  "location": "Location",
+  "education": "Education",
+  "degree": "Degree",
+  "view_on_github": "View on GitHub",
+  "live_demo": "Live Demo",
   "nav": {
+    "SOPHANNY_P": "SOPHANNY P.",
     "home": "Home",
     "about": "About",
     "skills": "Skills",
@@ -11,5 +15,44 @@
     "experience": "Experience",
     "education": "Education",
     "contact": "Contact"
+  },
+  "hero": {
+    "title": "Front-End Developer",
+    "name": "SOPHANNY PHAL",
+    "position": "Backend Developer",
+    "description": "I build secure, scalable, and high-performance backend applications and RESTful APIs.",
+    "hi": "Hi, I’m ",
+    "available_for": "Available for",
+    "opportunities": "opportunities",
+    "years_learning": "Years Learning",
+    "projects": "Projects",
+    "technologies": "Technologies",
+    "dedication": "Dedication",
+    "view_my_projects": "View My Projects",
+    "view_my_cv": "View My CV"
+  },
+  "about": {
+    "about_me": "About Me",
+    "description": "I am a passionate Backend Developer with hands-on experience in building web applications using Java and Spring Boot. I enjoy solving real-world problems, developing efficient APIs, and designing robust and reliable database systems. I recently graduated with a degree in Management Information Systems from SETEC Institute. I enjoy learning new technologies and continuously improving my knowledge and skills to grow as a software developer.",
+    "name": "Phal Sophanny",
+    "address": "Phnom Penh, Cambodia",
+    "setec_institute": "SETEC Institute",
+    "bachelor’s_degree": "Bachelor’s Degree"
+  },
+  "skill": {
+    "technical_skill": "Technical Skill",
+    "language": "Languages",
+    "framework": "Framework",
+    "databases": "Databases",
+    "tools_others": "Tools & Others"
+  },
+  "project": {
+    "title": "Featured Projects",
+    "hr_management_system": "HR Management System",
+    "hr_description": "A complete HR system with employee, department, position management, role-based access and JWT authentication.",
+    "student_management_system": "Student Management System",
+    "st_description": "Manage students, classes, and documents with file upload, search, pagination and RESTful APIs.",
+    "e_commerce_api": "E-Commerce API",
+    "e_description": "E-commerce backend API with user authentication, product management, cart, order and payment integration."
   }
 }

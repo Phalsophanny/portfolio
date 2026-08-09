@@ -2,16 +2,17 @@
   <header class="navbar">
     <SectionTitle
       icon="ri-code-s-slash-line"
-      label="SOPHANNY P."></SectionTitle>
+      :label="$t('nav.SOPHANNY_P')"></SectionTitle>
 
     <nav
       class="menu_container hidden flex gap-10 font-semibold text-xs items-center">
-      <NuxtLink
+      <NuxtLinkLocale
         v-for="item in menus"
         :to="item.to"
-        activeClass="text-primary font-bold"
         class="transition-colors duration-300 hover:text-primary"
-        >{{ item.name }}</NuxtLink
+        active-class="text-primary"
+        exact-active-class="font-bold text-primary"
+        >{{ item.name }}</NuxtLinkLocale
       >
 
       <LanguageSwitch />
@@ -50,7 +51,7 @@
               :key="item.to"
               v-slot="{ active, close }"
               as="div">
-              <NuxtLink
+              <NuxtLinkLocale
                 :to="item.to"
                 activeClass="bg-primary/10 text-primary"
                 @click="
@@ -67,13 +68,13 @@
                 ]">
                 <i :class="item.icon"></i>
                 <span>{{ item.name }}</span>
-              </NuxtLink>
+              </NuxtLinkLocale>
             </MenuItem>
 
             <div class="my-2 border-t border-color"></div>
-            <MenuItem v-slot="{ active }">
-              <LanguageSwitch @click="toggleTheme" />
-            </MenuItem>
+            <div class="px-3 py-3">
+              <LanguageSwitch />
+            </div>
 
             <MenuItem v-slot="{ active }">
               <button
@@ -104,51 +105,52 @@
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/20/solid";
-
+const { t } = useI18n();
 const colorMode = useColorMode();
-const menus = [
+const menus = computed(() => [
   {
-    name: "Home",
+    name: t("nav.home"),
     to: "/",
-    icon: "ri-home-5-line",
+    icon: "ri-home-line",
   },
   {
-    name: "About",
+    name: t("nav.about"),
     to: "/about",
     icon: "ri-user-line",
   },
   {
-    name: "Skills",
-    to: "/skill",
-    icon: "ri-code-s-slash-line",
+    name: t("nav.skills"),
+    to: "/skills",
+    icon: "ri-code-line",
   },
   {
-    name: "Projects",
+    name: t("nav.projects"),
     to: "/project",
     icon: "ri-folder-line",
   },
   {
-    name: "Experience",
+    name: t("nav.experience"),
     to: "/experience",
     icon: "ri-briefcase-line",
   },
   {
-    name: "Education",
+    name: t("nav.education"),
     to: "/education",
     icon: "ri-graduation-cap-line",
   },
   {
-    name: "Contact",
+    name: t("nav.contact"),
     to: "/contact",
     icon: "ri-mail-line",
   },
-];
+]);
 const toggleTheme = (v) => {
   colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
 };
 
 onMounted(() => {
   colorMode.preference;
+  menus.values;
 });
 </script>
 <style scoped>

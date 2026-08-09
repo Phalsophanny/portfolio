@@ -20,10 +20,10 @@
         class="border-color border-t pt-2 flex justify-between text-primary text-sm">
         <a :href="data.gitHubLink" target="_blank" class="flex gap-2">
           <i class="ri-github-fill"></i>
-          <span>View on GitHub</span>
+          <span>{{ $t("view_on_github") }}</span>
         </a>
         <a :href="data.demoLink" target="_blank" class="flex gap-2">
-          <span>Live Demo</span>
+          <span>{{ $t("live_demo") }}</span>
           <i class="ri-external-link-line"></i>
         </a>
       </div>
@@ -31,6 +31,7 @@
   </div>
 </template>
 <script setup>
+const { t } = useI18n();
 defineProps({
   data: {
     type: Object,

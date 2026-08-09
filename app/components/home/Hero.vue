@@ -8,17 +8,18 @@
             class="flex gap-2 items-center w-fit px-2 py-1 rounded-xl bg-primary/[0.23] text-xs text-primary font-semibold">
             <span
               class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <div>Backend Developer</div>
+            <div>{{ t("hero.position") }}</div>
           </div>
 
           <div class="text-4xl font-semibold">
-            <span>Hi, I’m </span>
+            <span>{{ t("hero.hi") }}</span>
             <span class="text-primary">{{ t("hero.name") }}</span>
           </div>
-          <div class="text-lg">Backend Developer | Java | Spring Boot</div>
+          <div class="text-lg">
+            {{ t("hero.position") }} | Java | Spring Boot
+          </div>
           <div class="text-xs text-secondary leading-[20px]">
-            I build secure, scalable, and high-performance backend applications
-            and RESTful APIs.
+            {{ t("hero.description") }}
           </div>
           <!-- profile mobile -->
           <div class="w-full flex justify-center left-container hidden py-10">
@@ -42,8 +43,12 @@
                   <span
                     class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
                   <div>
-                    <p class="text-gray-400 text-xs">Available for</p>
-                    <p class="text-white text-sm font-medium">opportunities</p>
+                    <p class="text-gray-400 text-xs">
+                      {{ t("hero.available_for") }}
+                    </p>
+                    <p class="text-white text-sm font-medium">
+                      {{ t("hero.opportunities") }}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -54,7 +59,7 @@
               <NuxtLink
                 to="/project"
                 class="flex gap-2 text-white bg-primary rounded-lg text-xs px-4 py-3 shadow-xl backdrop-blur-md hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-xl active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
-                <span>View My Projects</span>
+                <span>{{ t("hero.view_my_projects") }}</span>
                 <i class="ri-arrow-right-line"></i>
               </NuxtLink>
               <a
@@ -62,7 +67,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex gap-2 text-white rounded-xs text-xs px-3 py-3 bg-slate-800/90 backdrop-blur-md border border-slate-700 rounded-lg px-4 py-3 shadow-xl hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-xl active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
-                <span>View My CV</span>
+                <span>{{ t("hero.view_my_cv") }}</span>
                 <i class="ri-profile-line"></i>
               </a>
             </div>
@@ -104,20 +109,26 @@
             <div class="flex flex-col items-center justify-center">
               <div class="text-lg font-semibold text-primary">2+</div>
               <div class="text-xs text-secondary whitespace-nowrap">
-                Years Learning
+                {{ t("hero.years_learning") }}
               </div>
             </div>
             <div class="flex flex-col items-center justify-center">
               <div class="text-lg font-semibold text-primary">10+</div>
-              <div class="text-xs text-secondary">Project</div>
+              <div class="text-xs text-secondary">
+                {{ t("hero.projects") }}
+              </div>
             </div>
             <div class="flex flex-col items-center justify-center">
               <div class="text-lg font-semibold text-primary">5+</div>
-              <div class="text-xs text-secondary">Techologies</div>
+              <div class="text-xs text-secondary">
+                {{ t("hero.technologies") }}
+              </div>
             </div>
             <div class="flex flex-col items-center justify-center">
               <div class="text-lg font-semibold text-primary">100%</div>
-              <div class="text-xs text-secondary">Dedication</div>
+              <div class="text-xs text-secondary">
+                {{ t("hero.dedication") }}
+              </div>
             </div>
           </div>
         </div>
@@ -144,8 +155,12 @@
               <span
                 class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <div>
-                <p class="text-gray-400 text-xs">Available for</p>
-                <p class="text-white text-sm font-medium">opportunities</p>
+                <p class="text-gray-400 text-xs">
+                  {{ t("hero.available_for") }}
+                </p>
+                <p class="text-white text-sm font-medium">
+                  {{ t("hero.opportunities") }}
+                </p>
               </div>
             </div>
           </div>

@@ -4,32 +4,39 @@
       class="rounded-2xl border border-color bg-surface p-4 w-full big-screen">
       <div class="grid grid-cols-2 gap-10">
         <div class="flex flex-col gap-5 justify-between">
-          <SectionTitle icon="ri-user-fill" label="About Me"></SectionTitle>
+          <SectionTitle
+            icon="ri-user-fill"
+            :label="$t('about.about_me')"></SectionTitle>
           <div class="text-xs text-secondary leading-[20px]">
-            I am a passionate Backend Developer with hands-on experience in
-            building web applications using Java and Spring Boot. I enjoy
-            solving real-world problems, creating efficient APIs, and designing
-            robust database systems. I am currently a final year student of
-            Management Information Systems at SETEC Institute. I love learning
-            new technologies and continuously improving my skills.
+            {{ $t("about.description") }}
           </div>
         </div>
         <div class="border-l border-color flex">
           <div class="w-full ml-10 flex justify-between flex-col">
-            <InfoItem icon="ri-user-line" label="Name:"></InfoItem>
-            <InfoItem icon="ri-mail-line" label="Gmail:"></InfoItem>
-            <InfoItem icon="ri-map-pin-line" label="Location:"></InfoItem>
+            <InfoItem icon="ri-user-line" :label="$t('name') + ' :'"></InfoItem>
+            <InfoItem
+              icon="ri-mail-line"
+              :label="$t('gmail') + ' :'"></InfoItem>
+            <InfoItem
+              icon="ri-map-pin-line"
+              :label="$t('location') + ' :'"></InfoItem>
             <InfoItem
               icon="ri-graduation-cap-line"
-              label="Education:"></InfoItem>
-            <InfoItem icon="ri-school-line" label="Degree:"></InfoItem>
+              :label="$t('education') + ' :'"></InfoItem>
+            <InfoItem
+              icon="ri-school-line"
+              :label="$t('degree') + ' :'"></InfoItem>
           </div>
           <div class="w-full flex justify-between flex-col">
-            <div class="text-secondary text-xs">Phal Sophanny</div>
+            <div class="text-secondary text-xs">{{ $t("about.name") }}</div>
             <div class="text-secondary text-xs">Pannyphal1@gmail.com</div>
-            <div class="text-secondary text-xs">Phnom Penh, Cambodia</div>
-            <div class="text-secondary text-xs">SETEC Institute</div>
-            <div class="text-secondary text-xs">Bachelor’s Degree</div>
+            <div class="text-secondary text-xs">{{ $t("about.address") }}</div>
+            <div class="text-secondary text-xs">
+              {{ $t("about.setec_institute") }}
+            </div>
+            <div class="text-secondary text-xs">
+              {{ $t("about.bachelor’s_degree") }}
+            </div>
           </div>
         </div>
       </div>
@@ -99,6 +106,9 @@
     </div>
   </section>
 </template>
+<script setup>
+const { t } = useI18n();
+</script>
 <style scoped>
 /* Mobile */
 @media (max-width: 389px) {
