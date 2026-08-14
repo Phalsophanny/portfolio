@@ -4,6 +4,7 @@
   "location": "Location",
   "education": "Education",
   "degree": "Degree",
+  "join_date": "Joined Jan 2023",
   "view_on_github": "View on GitHub",
   "live_demo": "Live Demo",
   "nav": {
@@ -29,6 +30,7 @@
     "technologies": "Technologies",
     "dedication": "Dedication",
     "view_my_projects": "View My Projects",
+    "view_all_projects": "View All Projects",
     "view_my_cv": "View My CV"
   },
   "about": {
@@ -54,5 +56,17 @@
     "st_description": "Manage students, classes, and documents with file upload, search, pagination and RESTful APIs.",
     "e_commerce_api": "E-Commerce API",
     "e_description": "E-commerce backend API with user authentication, product management, cart, order and payment integration."
+  },
+  "git": {
+    "total_contributions": "Total Contributions",
+    "loading_gitHub_activity": "Loading GitHub activity",
+    "failed_to_load_gitHub_activity": "Failed to load GitHub activity",
+    "learn_how_we_count_contributions": "Learn how we count contributions",
+    "less_git": "Less",
+    "more_git": "More",
+    "following": "Following",
+    "repositories": "Repositories",
+    "stars": "Stars",
+    "followers": "Followers"
   }
 }

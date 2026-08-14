@@ -4,5 +4,6 @@
     <About />
     <Skills />
     <Projects />
+    <Github />
   </main>
 </template>

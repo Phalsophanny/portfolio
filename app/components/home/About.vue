@@ -3,7 +3,7 @@
     <div
       class="rounded-2xl border border-color bg-surface p-4 w-full big-screen">
       <div class="grid grid-cols-2 gap-10">
-        <div class="flex flex-col gap-5 justify-between">
+        <div class="flex flex-col gap-3 justify-between">
           <SectionTitle
             icon="ri-user-fill"
             :label="$t('about.about_me')"></SectionTitle>

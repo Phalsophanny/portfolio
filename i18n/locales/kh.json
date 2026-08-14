@@ -4,6 +4,7 @@
   "location": "ទីតាំង",
   "education": "ការសិក្សា",
   "degree": "សញ្ញាបត្រ",
+  "join_date": "បានចូលរួម ខែមករា ឆ្នាំ២០២៣",
   "view_on_github": "មើលលើ GitHub",
   "live_demo": "សាកល្បងផ្ទាល់",
   "nav": {
@@ -29,6 +30,7 @@
     "technologies": "បច្ចេកវិទ្យា",
     "dedication": "ការប្តេជ្ញាចិត្ត",
     "view_my_projects": "មើលគម្រោង",
+    "view_all_projects": "មើលគម្រោងទាំងអស់",
     "view_my_cv": "មើលប្រវត្តិរូបសង្ខេប CV"
   },
   "about": {
@@ -54,5 +56,17 @@
     "st_description": "គ្រប់គ្រងសិស្ស ថ្នាក់រៀន និងឯកសារ ជាមួយមុខងារផ្ទុកឯកសារ ស្វែងរក បែងចែកទំព័រ និង RESTful API។",
     "e_commerce_api": "E-Commerce API",
     "e_description": "Backend API សម្រាប់ប្រព័ន្ធពាណិជ្ជកម្មអេឡិចត្រូនិក ដែលមានការផ្ទៀងផ្ទាត់អ្នកប្រើប្រាស់ ការគ្រប់គ្រងផលិតផល កន្ត្រកទំនិញ ការបញ្ជាទិញ និងការរួមបញ្ចូលប្រព័ន្ធទូទាត់។"
+  },
+  "git": {
+    "total_contributions": "ការរួមចំណែកសរុប",
+    "loading_gitHub_activity": "កំពុងផ្ទុកសកម្មភាព GitHub",
+    "failed_to_load_gitHub_activity": "មិនអាចផ្ទុកសកម្មភាព GitHub បានទេ",
+    "learn_how_we_count_contributions": "ស្វែងយល់ពីរបៀបដែលយើងរាប់ចំនួនការរួមចំណែក",
+    "less_git": "តិច",
+    "more_git": "ច្រើន",
+    "following": "កំពុងតាមដាន",
+    "repositories": "ឃ្លាំងកូដ",
+    "stars": "ផ្កាយ",
+    "followers": "អ្នកតាមដាន"
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <section class="app-container">
     <div class="rounded-2xl border border-color bg-surface p-4 w-full">
-      <div class="flex flex-col gap-5 justify-between">
+      <div class="flex flex-col gap-3 justify-between">
         <SectionTitle
           icon="ri-code-s-slash-line"
           :label="$t('skill.technical_skill')"></SectionTitle>

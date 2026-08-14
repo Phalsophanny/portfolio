@@ -50,4 +50,9 @@ export default defineNuxtConfig({
       },
     ],
   },
+
+  runtimeConfig: {
+    githubToken: process.env.GITHUB_TOKEN,
+    githubUsername: process.env.GITHUB_USERNAME,
+  },
 });
