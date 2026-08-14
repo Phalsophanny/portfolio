@@ -1,6 +1,6 @@
 <template>
   <section
-    class="overflow-hidden rounded-xl border border-slate-800 bg-slate-950 p-4">
+    class="overflow-hidden rounded-xl border border-color bg-surface p-4">
     <!-- Loading -->
     <div v-if="pending" class="text-sm text-slate-400">
       {{ $t("git.failed_to_load_gitHub_activity") }}...
@@ -51,7 +51,7 @@
               <div
                 v-for="day in week.contributionDays"
                 :key="day.date"
-                class="h-[5px] w-[5px] shrink-0 rounded-[1px]"
+                class="h-[5px] w-[5px] shrink-0 rounded-[1px] text-secondary"
                 :style="{
                   backgroundColor: day.color,
                 }"

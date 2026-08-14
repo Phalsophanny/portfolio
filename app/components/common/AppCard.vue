@@ -8,7 +8,7 @@
           :color="data.iconColor ? data.iconColor : 'emerald'" />
 
         <div class="flex flex-col gap-1">
-          <div class="font-semibold">{{ data.title }}</div>
+          <div class="font-semibold text-sm">{{ data.title }}</div>
           <div class="w-[30%] h-[5px] bg-emerald rounded-2xl"></div>
           <div class="text-secondary text-xs leading-[20px] min-h-20">
             {{ data.detail }}

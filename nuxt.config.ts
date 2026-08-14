@@ -17,6 +17,17 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  app: {
+    head: {
+      meta: [
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1, viewport-fit=cover",
+        },
+      ],
+    },
+  },
   colorMode: {
     preference: "dark", // light | dark | system
     fallback: "dark",

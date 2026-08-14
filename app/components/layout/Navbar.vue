@@ -5,14 +5,16 @@
       :label="$t('nav.SOPHANNY_P')"></SectionTitle>
 
     <nav
-      class="menu_container hidden flex gap-10 font-semibold text-xs items-center">
+      class="menu_container hidden flex gap-3 font-semibold text-xs items-center">
       <NuxtLinkLocale
         v-for="item in menus"
         :to="item.to"
         class="transition-colors duration-300 hover:text-primary"
         active-class="text-primary"
-        exact-active-class="font-bold text-primary"
-        >{{ item.name }}</NuxtLinkLocale
+        exact-active-class="font-bold text-primary">
+        <div class="px-5 py-3">
+          {{ item.name }}
+        </div></NuxtLinkLocale
       >
 
       <LanguageSwitch />
@@ -72,9 +74,10 @@
             </MenuItem>
 
             <div class="my-2 border-t border-color"></div>
-            <div class="px-3 py-3">
+            <MenuItem v-slot="{ active }" class="ml-3">
               <LanguageSwitch />
-            </div>
+            </MenuItem>
+            <div class="my-2 border-t border-color"></div>
 
             <MenuItem v-slot="{ active }">
               <button
@@ -91,7 +94,11 @@
                   "></i>
 
                 <span>
-                  {{ colorMode.value === "dark" ? "Light Mode" : "Dark Mode" }}
+                  {{
+                    colorMode.value === "dark"
+                      ? $t("light_mode")
+                      : $t("dark_mode")
+                  }}
                 </span>
               </button>
             </MenuItem>

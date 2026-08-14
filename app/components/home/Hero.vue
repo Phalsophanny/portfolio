@@ -56,12 +56,12 @@
           </div>
           <div class="flex flex-wrap hero-btn">
             <div class="flex flex-wrap gap-5 items-center w-fit hero-btn">
-              <NuxtLink
+              <NuxtLinkLocale
                 to="/project"
                 class="flex gap-2 text-white bg-primary rounded-lg text-xs px-4 py-3 shadow-xl backdrop-blur-md hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-xl active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
                 <span>{{ t("hero.view_my_projects") }}</span>
                 <i class="ri-arrow-right-line"></i>
-              </NuxtLink>
+              </NuxtLinkLocale>
               <a
                 :href="resume"
                 target="_blank"
@@ -84,22 +84,26 @@
 
               <div class="relative">
                 <button
+                  type="button"
                   @click="copyGmail"
-                  class="flex items-center justify-center text-white bg-slate-800/90 backdrop-blur-md border border-slate-700 rounded-full w-[42px] h-[42px] shadow-xl hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-xl active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
+                  class="relative flex h-[42px] w-[42px] items-center justify-center rounded-full border border-slate-700 bg-slate-800/90 text-white shadow-xl backdrop-blur-md transition-all duration-300 ease-in-out touch-manipulation active:scale-90 active:bg-blue-700 md:hover:-translate-y-0.5 md:hover:bg-[#1d4ed8] md:hover:shadow-xl">
                   <Transition
-                    enter-active-class="transition-all duration-300"
-                    leave-active-class="transition-all duration-300 absolute"
-                    enter-from-class="opacity-0 scale-50 rotate-90"
-                    enter-to-class="opacity-100 scale-100 rotate-0"
-                    leave-from-class="opacity-100 scale-100 rotate-0"
-                    leave-to-class="opacity-0 scale-50 -rotate-90">
+                    mode="out-in"
+                    enter-active-class="transition-all duration-300 ease-out"
+                    leave-active-class="transition-all duration-200 ease-in"
+                    enter-from-class="scale-50 rotate-90 opacity-0"
+                    enter-to-class="scale-100 rotate-0 opacity-100"
+                    leave-from-class="scale-100 rotate-0 opacity-100"
+                    leave-to-class="scale-50 -rotate-90 opacity-0">
                     <i
-                      :key="copied"
-                      :class="
-                        copied
-                          ? 'ri-check-line text-green-400 text-xl'
-                          : 'ri-mail-line text-xl'
-                      " />
+                      v-if="!copied"
+                      key="mail"
+                      class="ri-mail-line text-xl text-white" />
+
+                    <i
+                      v-else
+                      key="check"
+                      class="ri-check-line text-xl text-green-400" />
                   </Transition>
                 </button>
               </div>
@@ -173,24 +177,48 @@
 import profile from "~/assets/images/profile.jpg";
 import resume from "~/assets/files/resume.pdf";
 const { t, locale, messages } = useI18n();
-
-console.log("Locale:", locale.value);
-console.log("Messages:", messages.value);
-console.log("Name:", t("hero.name"));
-const gmail = "Pannyphal1@gmail.com";
 const copied = ref(false);
 
 const copyGmail = async () => {
-  try {
-    await navigator.clipboard.writeText(gmail);
+  const email = "Pannyphal1@gmail.com";
 
+  try {
+    // Try modern Clipboard API first
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(email);
+    } else {
+      // Fallback for HTTP / mobile development
+      const textarea = document.createElement("textarea");
+
+      textarea.value = email;
+      textarea.style.position = "fixed";
+      textarea.style.left = "-9999px";
+      textarea.style.top = "0";
+      textarea.setAttribute("readonly", "");
+
+      document.body.appendChild(textarea);
+
+      textarea.focus();
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+
+      const successful = document.execCommand("copy");
+
+      document.body.removeChild(textarea);
+
+      if (!successful) {
+        throw new Error("Copy failed");
+      }
+    }
+
+    // Change icon after successful copy
     copied.value = true;
 
     setTimeout(() => {
       copied.value = false;
-    }, 3000);
-  } catch (err) {
-    console.error("Failed to copy:", err);
+    }, 2000);
+  } catch (error) {
+    console.error("Failed to copy email:", error);
   }
 };
 </script>

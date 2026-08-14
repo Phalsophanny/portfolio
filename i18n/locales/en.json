@@ -7,6 +7,10 @@
   "join_date": "Joined Jan 2023",
   "view_on_github": "View on GitHub",
   "live_demo": "Live Demo",
+  "information": "Information",
+  "present": "Present",
+  "light_mode": "Light Mode",
+  "dark_mode": "Dark Mode",
   "nav": {
     "SOPHANNY_P": "SOPHANNY P.",
     "home": "Home",
@@ -67,6 +71,20 @@
     "following": "Following",
     "repositories": "Repositories",
     "stars": "Stars",
-    "followers": "Followers"
+    "followers": "Followers",
+    "gitHub_statistics": "GitHub Statistics"
+  },
+  "contact": {
+    "management_information_systems": "Management Information Systems (MIS)",
+    "bachelor’s_degree": "Bachelor’s Degree",
+    "get_in_touch": "Get In Touch",
+    "get_in_touch_desc1": "I am open to internship and full-time opportunities",
+    "get_in_touch_desc2": "Feel free to reach out!",
+    "get_in_touch_address": "Phnom Penh"
+  },
+  "footer": {
+    "2024_sophanny_hal_ll_rights_reserved": "2024 Sophanny Phal. All rights reserved.",
+    "build_with": "Build with",
+    "using": "using"
   }
 }

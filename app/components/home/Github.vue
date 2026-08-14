@@ -5,7 +5,7 @@
       <div class="w-full flex justify-between gap-3 flex-wrap">
         <div class="flex flex-col gap-4 big-container-git-api">
           <SectionTitle
-            label="GitHub Statistics"
+            :label="$t('git.gitHub_statistics')"
             icon="ri-organization-chart" />
           <div
             class="flex justify-between gap-1 bg-background border border-color rounded-2xl p-4 w-fit">
@@ -42,7 +42,7 @@
 
         <div class="flex min-w-0 flex-col gap-4 small-container-git-api">
           <SectionTitle
-            label="GitHub Statistics"
+            :label="$t('git.gitHub_statistics')"
             icon="ri-organization-chart" />
 
           <div
@@ -129,7 +129,7 @@
         </div>
 
         <div class="flex items-center justify-center small-screen">
-          <div class="flex gap-2 flex-wrap">
+          <div class="flex gap-2 flex-wrap justify-center">
             <div
               class="border border-color rounded-2xl bg-background-light px-4 pb-2 pt-3 h-fit w-[120px]">
               <div class="text-xs text-secondary">

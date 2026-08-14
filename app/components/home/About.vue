@@ -45,14 +45,11 @@
       <div
         class="rounded-2xl border border-color bg-surface p-4 w-full small-screen">
         <div class="flex flex-col gap-5 justify-between">
-          <SectionTitle icon="ri-user-fill" label="About Me"></SectionTitle>
+          <SectionTitle
+            icon="ri-user-fill"
+            :label="$t('about.about_me')"></SectionTitle>
           <div class="text-xs text-secondary leading-[20px]">
-            I am a passionate Backend Developer with hands-on experience in
-            building web applications using Java and Spring Boot. I enjoy
-            solving real-world problems, creating efficient APIs, and designing
-            robust database systems. I am currently a final year student of
-            Management Information Systems at SETEC Institute. I love learning
-            new technologies and continuously improving my skills.
+            {{ $t("about.description") }}
           </div>
         </div>
       </div>
@@ -61,19 +58,19 @@
         <div class="flex flex-col gap-5 justify-between w-full">
           <SectionTitle
             icon="ri-info-card-line"
-            label="Information"></SectionTitle>
+            :label="$t('information')"></SectionTitle>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="flex flex-col gap-3 w-[278px]">
               <InfoItem
                 icon="ri-user-line"
-                label="Name"
+                :label="$t('name')"
                 color="text-color"></InfoItem>
-              <div class="text-secondary text-xs">Phal Sophanny</div>
+              <div class="text-secondary text-xs">{{ $t("about.name") }}</div>
             </div>
             <div class="flex flex-col gap-3 w-[278px]">
               <InfoItem
                 icon="ri-mail-line"
-                label="Gmail"
+                :label="$t('gmail')"
                 color="text-color"></InfoItem>
               <div class="text-secondary text-xs">Pannyphal1@gmail.com</div>
             </div>
@@ -81,24 +78,30 @@
             <div class="flex flex-col gap-3 w-[278px]">
               <InfoItem
                 icon="ri-map-pin-line"
-                label="Location"
+                :label="$t('location')"
                 color="text-color"></InfoItem>
-              <div class="text-secondary text-xs">Phnom Penh, Cambodia</div>
+              <div class="text-secondary text-xs">
+                {{ $t("about.address") }}
+              </div>
             </div>
             <div class="flex flex-col gap-3 w-[278px]">
               <InfoItem
                 icon="ri-graduation-cap-line"
-                label="Education"
+                :label="$t('education')"
                 color="text-color"></InfoItem>
-              <div class="text-secondary text-xs">SETEC Institute</div>
+              <div class="text-secondary text-xs">
+                {{ $t("about.setec_institute") }}
+              </div>
             </div>
 
             <div class="flex flex-col gap-3 w-[278px]">
               <InfoItem
                 icon="ri-school-line"
-                label="Degree"
+                :label="$t('degree')"
                 color="text-color"></InfoItem>
-              <div class="text-secondary text-xs">Bachelor’s Degree</div>
+              <div class="text-secondary text-xs">
+                {{ $t("about.bachelor’s_degree") }}
+              </div>
             </div>
           </div>
         </div>
