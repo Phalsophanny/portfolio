@@ -39,6 +39,8 @@
   },
   "about": {
     "about_me": "About Me",
+    "me": " Me",
+    "about": "About",
     "description": "I am a passionate Backend Developer with hands-on experience in building web applications using Java and Spring Boot. I enjoy solving real-world problems, developing efficient APIs, and designing robust and reliable database systems. I recently graduated with a degree in Management Information Systems from SETEC Institute. I enjoy learning new technologies and continuously improving my knowledge and skills to grow as a software developer.",
     "name": "Phal Sophanny",
     "address": "Phnom Penh, Cambodia",
