@@ -9,14 +9,20 @@
 
         <div class="flex flex-col gap-1">
           <div class="font-semibold text-sm">{{ data.title }}</div>
-          <div class="w-[30%] h-[5px] bg-emerald rounded-2xl"></div>
+          <div
+            :class="[
+              'w-[30%] h-[5px] rounded-2xl',
+              data.iconColor ? 'bg-' + data.iconColor : 'bg-emerald',
+            ]"
+            v-if="!noLine"></div>
           <div class="text-secondary text-xs leading-[20px] min-h-20">
             {{ data.detail }}
           </div>
-          <SkillBox :skills="data.skills" />
+          <SkillBox :skills="data.skills" v-if="!noSkillBox" />
         </div>
       </div>
       <div
+        v-if="!noLink"
         class="border-color border-t pt-2 flex justify-between text-primary text-sm">
         <a :href="data.gitHubLink" target="_blank" class="flex gap-2">
           <i class="ri-github-fill"></i>
@@ -36,6 +42,18 @@ defineProps({
   data: {
     type: Object,
     required: true,
+  },
+  noLink: {
+    type: Boolean,
+    default: false,
+  },
+  noSkillBox: {
+    type: Boolean,
+    default: false,
+  },
+  noLine: {
+    type: Boolean,
+    default: false,
   },
 });
 </script>

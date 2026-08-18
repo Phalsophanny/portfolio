@@ -1,5 +1,6 @@
 <template>
-  <div class="flex items-center gap-3">
+  <div
+    :class="['flex gap-2', itemClass ? 'items-' + itemClass : 'items-center ']">
     <i :class="icon" class="text-primary"></i>
 
     <div :class="color ? color : 'text-secondary'" class="text-xs">
@@ -14,5 +15,6 @@ defineProps({
   label: String,
   value: String,
   color: String,
+  itemClass: String,
 });
 </script>

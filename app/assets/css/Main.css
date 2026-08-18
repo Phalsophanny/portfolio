@@ -391,6 +391,9 @@ body {
 .border-color {
   border-color: var(--border-color);
 }
+.border-primary {
+  border-color: var(--primary);
+}
 
 /* ============================================================
    Radius
@@ -670,6 +673,18 @@ body {
   border: 1px solid rgb(255 255 255 / 0.1);
 }
 .project-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 9999px;
+  /* border: 1px solid rgb(255 255 255 / 10%); */
+  flex-shrink: 0;
+}
+.project-icon-border {
   width: 42px;
   height: 42px;
 

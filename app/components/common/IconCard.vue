@@ -11,6 +11,10 @@ const props = defineProps({
     type: String,
     default: "emerald",
   },
+  border: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const iconClass = computed(() => `icon-${props.color}`);

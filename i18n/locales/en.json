@@ -11,6 +11,7 @@
   "present": "Present",
   "light_mode": "Light Mode",
   "dark_mode": "Dark Mode",
+  "internship": "Internship",
   "nav": {
     "SOPHANNY_P": "SOPHANNY P.",
     "home": "Home",
@@ -24,6 +25,7 @@
   "hero": {
     "title": "Front-End Developer",
     "name": "SOPHANNY PHAL",
+    "name_small": "Sophanny Phal",
     "position": "Backend Developer",
     "description": "I build secure, scalable, and high-performance backend applications and RESTful APIs.",
     "hi": "Hi, I’m ",
@@ -35,7 +37,9 @@
     "dedication": "Dedication",
     "view_my_projects": "View My Projects",
     "view_all_projects": "View All Projects",
-    "view_my_cv": "View My CV"
+    "view_my_cv": "View My CV",
+    "problem_solver": "Problem Solver",
+    "lifelong_learner": "Lifelong Learner"
   },
   "about": {
     "about_me": "About Me",
@@ -45,7 +49,34 @@
     "name": "Phal Sophanny",
     "address": "Phnom Penh, Cambodia",
     "setec_institute": "SETEC Institute",
-    "bachelor’s_degree": "Bachelor’s Degree"
+    "bachelor’s_degree": "Bachelor’s Degree",
+    "interest": "Interest",
+    "desc1": "I'm Sophanny Phal, a passionate Backend Developer with a strong foundation in Java and Spring Boot. I build secure, scalable, and high-performing web applications and RESTful APIs that solve real-world problems.",
+    "desc2": "I enjoy turning complex ideas into clean, efficient, and maintainable code. I'm always learning new technologies and improving my skills to grow as a developer and deliver better solutions.",
+    "my_journey": {
+      "my_journey": "My Journey",
+      "bachelor": {
+        "title": "Bachelor's Degree at SETEC Institute",
+        "description": "Studying Management Information Systems (MIS) and building a strong foundation in IT and software development."
+      },
+      "learning": {
+        "title": "Exploring & Learning",
+        "description": "Focused on HTML, CSS, JavaScript, Bootstrap, Tailwind CSS, and modern frontend development."
+      },
+      "projects": {
+        "title": "Building Projects",
+        "description": "Developing responsive web applications using Vue.js and Nuxt.js, integrating REST APIs, and continuously improving frontend skills."
+      },
+      "internship": {
+        "title": "Frontend Developer Intern",
+        "description": "Worked on real-world web applications, developed responsive interfaces, integrated APIs, implemented file upload features, and collaborated with development teams."
+      },
+      "the_best_way": "“The best way to predict the future is to create it.”",
+      "problem_solver": "Problem Solver",
+      "ps_description": "I enjoy solving complex problems and turning ideas into real solutions.",
+      "detail_oriented": "Detail Oriented",
+      "do_description": "I pay attention to details to deliver reliable and high-quality code."
+    }
   },
   "skill": {
     "technical_skill": "Technical Skill",

@@ -1,6 +1,6 @@
 <template>
   <section class="app-container">
-    <div class="container items-center">
+    <div class="container-full">
       <!-- left -->
       <div class="max-w-md">
         <div class="flex flex-col gap-4">
@@ -16,56 +16,121 @@
             <span class="text-primary"> {{ t("about.me") }}</span>
           </div>
           <div class="text-lg">
-            {{ t("hero.position") }} | Problem Solver | Lifelong Learner
+            {{ t("hero.position") }} | {{ t("hero.problem_solver") }} |
+            {{ t("hero.lifelong_learner") }}
           </div>
           <div class="flex flex-col gap-1">
             <div class="text-xs text-secondary leading-[20px]">
-              I'm Sophanny Phal, a passionate Backend Developer with a strong
-              foundation in Java and Spring Boot. I build secure, scalable, and
-              high-performing web applications and RESTful APIs that solve
-              real-world problems.
+              {{ t("about.desc1") }}
             </div>
             <div class="text-xs text-secondary leading-[20px]">
-              I enjoy turning complex ideas into clean, efficient, and
-              maintainable code. I'm always learning new technologies and
-              improving my skills to grow as a developer and deliver better
-              solutions.
+              {{ t("about.desc2") }}
             </div>
           </div>
           <!-- profile mobile -->
-          <div class="w-full flex justify-center left-container hidden py-10">
-            <div class="relative w-fit flex">
-              <!-- Circle Border -->
-              <div
-                class="rounded-full p-1 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-400 shadow-[0_0_40px_rgba(37,99,235,0.45)]">
-                <div
-                  class="rounded-full p-1 bg-slate-900 border-4 border-slate-900 overflow-hidden">
-                  <img
-                    :src="profile"
-                    alt="Profile"
-                    class="w-52 h-52 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 object-contain rounded-full" />
+          <div class="w-full flex justify-center left-container hidden">
+            <div
+              class="rounded-2xl border border-color bg-surface right-full-container w-full small-screen">
+              <div class="flex flex-col gap-5 justify-between items-center">
+                <div class="relative">
+                  <!-- Circle Border -->
+                  <div
+                    class="rounded-full p-1 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-400 shadow-[0_0_40px_rgba(37,99,235,0.45)]">
+                    <div
+                      class="rounded-full p-1 bg-slate-900 border-4 border-slate-900 overflow-hidden">
+                      <img
+                        :src="profile"
+                        alt="Profile"
+                        class="w-32 h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-50 lg:h-50 object-contain rounded-full" />
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Status Card -->
-              <div
-                class="absolute bottom-4 right-0 translate-x-1/4 bg-slate-800/90 backdrop-blur-md border border-slate-700 rounded-lg px-4 py-3 shadow-xl">
-                <div class="flex items-center gap-3">
-                  <span
-                    class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <div>
-                    <p class="text-gray-400 text-xs">
-                      {{ t("hero.available_for") }}
-                    </p>
-                    <p class="text-white text-sm font-medium">
-                      {{ t("hero.opportunities") }}
-                    </p>
+                <div class="flex w-full flex-col gap-1.5">
+                  <!-- Name -->
+                  <div
+                    class="grid grid-cols-[120px_1fr] items-center gap-3 sm:grid-cols-[180px_1fr]">
+                    <InfoItem
+                      icon="ri-user-line"
+                      :label="$t('name')"
+                      color="text-color" />
+
+                    <div class="text-secondary text-xs">
+                      {{ $t("about.name") }}
+                    </div>
+                  </div>
+
+                  <!-- Gmail -->
+                  <div
+                    class="grid grid-cols-[120px_1fr] items-center gap-3 sm:grid-cols-[180px_1fr]">
+                    <InfoItem
+                      icon="ri-mail-line"
+                      :label="$t('gmail')"
+                      color="text-color" />
+
+                    <div class="text-secondary text-xs break-all">
+                      Pannyphal1@gmail.com
+                    </div>
+                  </div>
+
+                  <!-- Location -->
+                  <div
+                    class="grid grid-cols-[120px_1fr] items-center gap-3 sm:grid-cols-[180px_1fr]">
+                    <InfoItem
+                      icon="ri-map-pin-line"
+                      :label="$t('location')"
+                      color="text-color" />
+
+                    <div class="text-secondary text-xs">
+                      {{ $t("about.address") }}
+                    </div>
+                  </div>
+
+                  <!-- Education -->
+                  <div
+                    class="grid grid-cols-[120px_1fr] items-center gap-3 sm:grid-cols-[180px_1fr]">
+                    <InfoItem
+                      icon="ri-graduation-cap-line"
+                      :label="$t('education')"
+                      color="text-color" />
+
+                    <div class="text-secondary text-xs">
+                      {{ $t("about.setec_institute") }}
+                    </div>
+                  </div>
+
+                  <!-- Degree -->
+                  <div
+                    class="grid grid-cols-[120px_1fr] items-center gap-3 sm:grid-cols-[180px_1fr]">
+                    <InfoItem
+                      icon="ri-school-line"
+                      :label="$t('degree')"
+                      color="text-color" />
+
+                    <div class="text-secondary text-xs">
+                      {{ $t("about.bachelor’s_degree") }}
+                    </div>
+                  </div>
+
+                  <!-- Interest -->
+                  <div
+                    class="grid grid-cols-[120px_1fr] items-start gap-3 sm:grid-cols-[180px_1fr]">
+                    <InfoItem
+                      icon="ri-poker-hearts-line"
+                      :label="$t('about.interest') + ' :'"
+                      color="text-color items-center"
+                      item-class="center" />
+
+                    <div class="text-secondary text-xs leading-5">
+                      Backend Development, Web Development, Problem Solving,
+                      Continuous Learning
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="flex flex-wrap gap-5 items-center w-fit hero-btn">
+          <div class="flex flex-wrap gap-5 items-center hero-btn">
             <NuxtLinkLocale
               to="/project"
               class="flex gap-2 text-white bg-primary rounded-lg text-xs px-4 py-3 shadow-xl backdrop-blur-md hover:bg-[#1d4ed8] hover:-translate-y-0.5 hover:shadow-xl active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
@@ -86,10 +151,10 @@
       <!-- right -->
 
       <div
-        class="rounded-2xl border border-color bg-surface p-4 w-full small-screen">
-        <div class="flex flex-col gap-5 justify-between">
+        class="rounded-2xl border border-color bg-surface right-full-container w-full small-screen right-container hidden">
+        <div class="flex flex-col gap-5 justify-between items-center">
           <div class="right-container hidden">
-            <div class="relative w-fit pr-[50px]">
+            <div class="relative">
               <!-- Circle Border -->
               <div
                 class="rounded-full p-1 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-400 shadow-[0_0_40px_rgba(37,99,235,0.45)]">
@@ -98,57 +163,89 @@
                   <img
                     :src="profile"
                     alt="Profile"
-                    class="w-52 h-52 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 object-contain rounded-full" />
-                </div>
-              </div>
-
-              <!-- Status Card -->
-              <div
-                class="absolute bottom-4 right-9 translate-x-1/4 bg-slate-800/90 backdrop-blur-md border border-slate-700 rounded-lg px-4 py-3 shadow-xl">
-                <div class="flex items-center gap-3">
-                  <span
-                    class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <div>
-                    <p class="text-gray-400 text-xs">
-                      {{ t("hero.available_for") }}
-                    </p>
-                    <p class="text-white text-sm font-medium">
-                      {{ t("hero.opportunities") }}
-                    </p>
-                  </div>
+                    class="w-32 h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 lg:w-50 lg:h-50 object-contain rounded-full" />
                 </div>
               </div>
             </div>
           </div>
-          <div class="flex">
-            <div class="w-full ml-10 flex justify-between flex-col">
+
+          <div class="flex w-full flex-col gap-1.5">
+            <!-- Name -->
+            <div
+              class="grid grid-cols-[120px_1fr] items-center gap-3 sm:grid-cols-[180px_1fr]">
               <InfoItem
                 icon="ri-user-line"
-                :label="$t('name') + ' :'"></InfoItem>
+                :label="$t('name')"
+                color="text-color" />
+
+              <div class="text-secondary text-xs">
+                {{ $t("about.name") }}
+              </div>
+            </div>
+
+            <!-- Gmail -->
+            <div
+              class="grid grid-cols-[120px_1fr] items-center gap-3 sm:grid-cols-[180px_1fr]">
               <InfoItem
                 icon="ri-mail-line"
-                :label="$t('gmail') + ' :'"></InfoItem>
+                :label="$t('gmail')"
+                color="text-color" />
+
+              <div class="text-secondary text-xs break-all">
+                Pannyphal1@gmail.com
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div
+              class="grid grid-cols-[120px_1fr] items-center gap-3 sm:grid-cols-[180px_1fr]">
               <InfoItem
                 icon="ri-map-pin-line"
-                :label="$t('location') + ' :'"></InfoItem>
-              <InfoItem
-                icon="ri-graduation-cap-line"
-                :label="$t('education') + ' :'"></InfoItem>
-              <InfoItem
-                icon="ri-school-line"
-                :label="$t('degree') + ' :'"></InfoItem>
-            </div>
-            <div class="w-full flex justify-between flex-col">
-              <div class="text-secondary text-xs">{{ $t("about.name") }}</div>
-              <div class="text-secondary text-xs">Pannyphal1@gmail.com</div>
+                :label="$t('location')"
+                color="text-color" />
+
               <div class="text-secondary text-xs">
                 {{ $t("about.address") }}
               </div>
+            </div>
+
+            <!-- Education -->
+            <div
+              class="grid grid-cols-[120px_1fr] items-center gap-3 sm:grid-cols-[180px_1fr]">
+              <InfoItem
+                icon="ri-graduation-cap-line"
+                :label="$t('education')"
+                color="text-color" />
+
               <div class="text-secondary text-xs">
                 {{ $t("about.setec_institute") }}
               </div>
+            </div>
+
+            <!-- Degree -->
+            <div
+              class="grid grid-cols-[120px_1fr] items-center gap-3 sm:grid-cols-[180px_1fr]">
+              <InfoItem
+                icon="ri-school-line"
+                :label="$t('degree')"
+                color="text-color" />
+
               <div class="text-secondary text-xs">
                 {{ $t("about.bachelor’s_degree") }}
+              </div>
+            </div>
+
+            <!-- Interest -->
+            <div
+              class="grid grid-cols-[120px_1fr] items-start gap-3 sm:grid-cols-[180px_1fr]">
+              <InfoItem
+                icon="ri-poker-hearts-line"
+                :label="$t('about.interest') + ' :'"
+                color="text-color items-start" />
+
+              <div class="text-secondary text-xs leading-5">
+                Backend Development, Web Development, Problem Solving,
+                Continuous Learning
               </div>
             </div>
           </div>
@@ -207,6 +304,10 @@ const copyGmail = async () => {
 };
 </script>
 <style scoped>
+.right-full-container {
+  padding: 20px !important;
+}
+
 /* Mobile */
 @media (max-width: 389px) {
   .right-container {
@@ -222,6 +323,7 @@ const copyGmail = async () => {
   .hero-btn {
     justify-content: center;
     gap: 20px;
+    width: 100%;
   }
 }
 
@@ -240,6 +342,7 @@ const copyGmail = async () => {
   .hero-btn {
     justify-content: center;
     gap: 20px;
+    width: 100%;
   }
 }
 
@@ -259,6 +362,7 @@ const copyGmail = async () => {
   .hero-btn {
     justify-content: center;
     gap: 20px;
+    width: 100%;
   }
 }
 
@@ -278,6 +382,7 @@ const copyGmail = async () => {
   .hero-btn {
     justify-content: center;
     gap: 20px;
+    width: 100%;
   }
 }
 
@@ -296,6 +401,13 @@ const copyGmail = async () => {
   .hero-btn {
     justify-content: space-between;
     gap: 20px;
+    width: fit-content;
+  }
+  .container-full {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1rem;
+    width: 100%;
   }
 }
 
@@ -314,6 +426,13 @@ const copyGmail = async () => {
   .hero-btn {
     justify-content: space-between;
     gap: 20px;
+    width: fit-content;
+  }
+  .container-full {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1rem;
+    width: 100%;
   }
 }
 </style>
